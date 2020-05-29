@@ -22,5 +22,8 @@ massive({
     }).catch(err => console.log(err))
 
     //Endpoints
-    app.get("/api/products/:id", productCtrl.getProduct)
+    app.get("/api/products/:product_id", productCtrl.getProduct)
     app.get("/api/products", productCtrl.getProducts)
+    app.post("/api/products", productCtrl.postProduct)
+    app.put("/api/products/:product_id", productCtrl.putProduct)
+    app.delete("/api/products/:product_id", productCtrl.deleteProduct)
