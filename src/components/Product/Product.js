@@ -1,17 +1,24 @@
-import React, {Component} from 'react'
- 
-class Product extends Component{
-    constructor(){
-        super()
-        this.state = {
- 
-        }
+import React from 'react'
+import {withRouter} from 'react-router-dom'
+import axios from 'axios'
+
+function Product({product, history, setList}){
+    const deleteItem = () => {
+        axios.delete(`/api/product/${product.product_id}`).then((res) => {
+            setList()
+        })
     }
-    render(){
-        
-        return(
-            <div>Product</div>
-        )
-    }
+    return (
+        <div>
+            <div>{product.name}</div>
+            <div>{product.price}</div>
+            <img src={product.image}/>
+            <button
+            onClick ={() => history.push(`/form/${product.product_id}`)}
+            >Edit</button>
+            <button onClick={deleteItem}>Delete</button>
+        </div>
+    )
 }
-export default Product
+
+export default withRouter(Product)

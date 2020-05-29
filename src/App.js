@@ -1,17 +1,14 @@
-import React from 'react';
-import Header from './components/Header/Header';
-import Form from './components/Form/Form';
-import Dashboard from './components/Dashboard/Dashboard';
+import React from "react";
+import routes from "./routes";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello World</h1>
-      <Dashboard/>
-      <Form/>
-      <Header/>
+      <Header />
+      {routes}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -2,6 +2,7 @@
 
 .env
 node_modules
+code.js
 
 # dependencies
 /node_modules
