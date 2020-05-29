@@ -4,7 +4,7 @@ import axios from 'axios'
 
 function Product({product, history, setList}){
     const deleteItem = () => {
-        axios.delete(`/api/product/${product.product_id}`).then((res) => {
+        axios.delete(`/api/products/${product.product_id}`).then((res) => {
             setList()
         })
     }

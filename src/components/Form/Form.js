@@ -25,6 +25,7 @@ class Form extends Component {
       })
     }
   }
+
   componentDidUpdate(prevProps) {
     const { product_id } = this.props.match.params
     if (!product_id && prevProps.match.params.product_id) { // if there is no longer an id and there was previously one (need previously one so this does not fire over and over)
@@ -58,7 +59,7 @@ class Form extends Component {
     const { name, price, image, isEdit } = this.state
     return (
       <div className="form-container">
-        <img scr={image}/>
+        <img src={image}/>
         <p>Image</p>
         <input placeholder="name product"
           name="name"
