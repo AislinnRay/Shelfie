@@ -36,6 +36,8 @@ class Form extends Component{
                     onChange={(e) => this.handleChange(e.target)}/>
                 <input placeholder="product price" name="price" value={price} 
                     onChange={(e) => this.handleChange(e.target)}/>
+                <input placeholder="product image" name="image" value={image}
+                    onChange={(e) => this.handleChange(e.target)}/>
                 <button onClick={this.resetState}>Cancel</button>
                 <button onClick={this.handleAdd}>Add to Inventory</button>
             </div>
