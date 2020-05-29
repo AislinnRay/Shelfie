@@ -5,7 +5,7 @@ const {SERVER_PORT, CONNECTION_STRING} = process.env
 const app = express()
 
 //Controllers
-//const productCtrl = require('./controllers/controller')
+const productCtrl = require("./controllers/controller")
 
 //Middleware
 app.use(express.json())
@@ -22,3 +22,5 @@ massive({
     }).catch(err => console.log(err))
 
     //Endpoints
+    app.get("/api/products/:id", productCtrl.getProduct)
+    app.get("/api/products", productCtrl.getProducts)
