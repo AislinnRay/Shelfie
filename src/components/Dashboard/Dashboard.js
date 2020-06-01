@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Product from "../Product/Product";
 import axios from "axios";
+import styleDash from './styleDash.css';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class Dashboard extends Component {
   }
   render() {
     return (
-      <div>
+      <div className="Dash">
         {this.state.list.map((product) => {
           return <Product key={product.product_id} setList={this.setList} product={product} />
         })}

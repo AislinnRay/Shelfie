@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import styleForm from './styleForm.css';
 
 class Form extends Component {
   constructor(props) {
@@ -58,30 +59,32 @@ class Form extends Component {
   render() {
     const { name, price, image, isEdit } = this.state
     return (
-      <div className="form-container">
-        <img src={image}/>
-        <p>Image</p>
-        <input placeholder="name product"
-          name="name"
-          value={name}
-          onChange={(e) => this.handleChange(e.target)}
-        />
-        <input
-          name="price"
-          value={price}
-          onChange={(e) => this.handleChange(e.target)}
-        />
+      <div className="Form">
+        <img className='form_img_preview' src={image}/>
+        <p>Image URL:</p>
         <input placeholder="image URL"
           name="image"
           value={image}
           onChange={(e) => this.handleChange(e.target)}
         />
+        <p>Product Name:</p>
+        <input placeholder="name product"
+          name="name"
+          value={name}
+          onChange={(e) => this.handleChange(e.target)}
+        />
+        <p>Price:</p>
+        <input
+          name="price"
+          value={price}
+          onChange={(e) => this.handleChange(e.target)}
+        />
         {isEdit ? (
-          <button onClick={this.handleEdit}>Edit</button>
+          <button className="form_button_box" onClick={this.handleEdit}>Edit</button>
         ) : (
             <div>
-                <button onClick={this.handleAdd}>Add</button>
-                <button onClick={this.resetState}>Cancel</button>
+                <button className="form_button_box" onClick={this.handleAdd}>Add</button>
+                <button className="form_button_box" onClick={this.resetState}>Cancel</button>
             </div>
         )}
       </div>
