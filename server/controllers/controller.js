@@ -4,7 +4,7 @@ module.exports = {
             const db = req.app.get('db')
             const { product_id } = req.params
             db.get_product(product_id)
-            .then((results) => res.status(200).send(results[1]))
+            .then((results) => res.status(200).send(results[0]))
             .catch((err) => res.status(500).send(err))
         },
     //read
