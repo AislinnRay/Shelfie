@@ -60,33 +60,33 @@ class Form extends Component {
     const { name, price, image, isEdit } = this.state
     return (
       <div className="Form">
-        <img className='form_img_preview' src={image}/>
-        <p>Image URL:</p>
-        <input placeholder="image URL"
+        {/* <img className='form_img_preview' src={image}/>
+        <p>Image URL:</p> */}
+        <input 
           name="image"
           value={image}
           onChange={(e) => this.handleChange(e.target)}
         />
-        <p>Product Name:</p>
-        <input placeholder="name product"
+        {/* <p>Product Name:</p> */}
+        <input 
           name="name"
           value={name}
           onChange={(e) => this.handleChange(e.target)}
         />
-        <p>Price:</p>
+        {/* <p>Price:</p> */}
         <input
           name="price"
           value={price}
           onChange={(e) => this.handleChange(e.target)}
         />
-        {isEdit ? (
+        {/* {isEdit ? (
           <button className="form_button_box" onClick={this.handleEdit}>Edit</button>
         ) : (
-            <div>
+            <div> */}
                 <button className="form_button_box" onClick={this.handleAdd}>Add</button>
                 <button className="form_button_box" onClick={this.resetState}>Cancel</button>
-            </div>
-        )}
+            {/* </div>
+        )} */}
       </div>
     )
   }
